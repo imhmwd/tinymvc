@@ -7,7 +7,7 @@ class Home
 
     public function index()
     {
-        echo "hi";
+        echo "Hi from method index in Class Home ~";
     }
 
 }
