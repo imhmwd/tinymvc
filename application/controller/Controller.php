@@ -2,8 +2,9 @@
 
 namespace Application\controller;
 
-class Controller {
+use System\trait\Redirect;
 
-
-
+class Controller
+{
+    use Redirect;
 }
