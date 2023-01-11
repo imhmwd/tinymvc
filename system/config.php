@@ -3,8 +3,9 @@
 $base_url = "http://localhost/tinymvc/";
 $base_dir = "/tinymvc/";
 
-//c?a=a
-//[esfahanahan.com/index.php , a ]
+//esfahanahan.com/tinymvc/home?a=a
+//[esfahanahan.com/tinymvc/home , a=a ]
+
 $tmp = explode('?', $_SERVER['REQUEST_URI']);
 
 //tmp[0] => mishe qabl az alamate soal
