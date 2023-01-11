@@ -7,7 +7,6 @@ use ReflectionMethod;
 class Routing
 {
     private $current_route;
-    private $method;
 
     public function __construct()
     {
