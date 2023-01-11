@@ -19,7 +19,6 @@ class Routing
     public function run()
     {
         //check kardan inke class home vojod dare ya na
-        //check kardan inke class home vojod dare ya na
         $path = realpath(dirname(__FILE__) . "/../../application/controller/" . $this->current_route[0] . ".php");
 
         if (!file_exists($path)) {
