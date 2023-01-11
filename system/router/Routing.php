@@ -7,6 +7,7 @@ use ReflectionMethod;
 class Routing
 {
     private $current_route;
+    private $method;
 
     public function __construct()
     {
@@ -25,14 +26,12 @@ class Routing
             echo "404";
             exit;
         }
-        require_once ($path);
+        require_once($path);
 
-        $method = null;
-        sizeof($this->current_route) == 1 ? $method == "index" : $method == $this->current_route[1];
+        sizeof($this->current_route) == 1 ? $method = "index" : $method = $this->current_route[1];
 
-        $class = "Application\contoller\\" . $this->current_route[0];
+        $class = "Application\controller\\" . $this->current_route[0];
         $object = new $class();
-
         if (method_exists($object, $method)) {
 
             $reflection = new ReflectionMethod($class, $method);
