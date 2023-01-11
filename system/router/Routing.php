@@ -25,6 +25,7 @@ class Routing
             echo "404";
             exit;
         }
+        require_once ($path);
 
         $method = null;
         sizeof($this->current_route) == 1 ? $method == "index" : $method == $this->current_route[1];
