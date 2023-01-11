@@ -11,13 +11,11 @@ class Routing
     public function __construct()
     {
         global $current_route;
-        // localhost/mvc/home/index/15
         $this->current_route = explode('/', $current_route);
     }
 
     public function run()
     {
-        //check kardan inke class home vojod dare ya na
         $path = realpath(dirname(__FILE__) . "/../../application/controller/" . $this->current_route[0] . ".php");
 
         if (!file_exists($path)) {
