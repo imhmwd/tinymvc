@@ -2,12 +2,18 @@
 
 namespace Application\controller;
 
-class Home
+class Home extends Controller
 {
 
     public function index()
     {
-        echo "Hi from method index in Class Home ~";
+        $productName = "iphone";
+        $this->view('app.index' , compact('productName'));
+    }
+
+    public function create()
+    {
+        echo "this is create method !";
     }
 
 }
