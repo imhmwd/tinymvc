@@ -1,21 +1,17 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Home index</title>
-</head>
-<body>
+<?php $this->include("app.layouts.header", ['categories' => $categories]); ?>
 
-<h1>
-    Home index
-</h1>
+    <section class="container my-5">
+        <!-- Example row of columns -->
+        <section class="row">
 
-<p>
-    <?php echo $productName ?>
-</p>
+            <?php foreach ($articles as $article) {?>
+            <section class="col-md-4">
+                <h2 style="font-size: 1.2rem; font-weight: bold;"><?php echo $article['title']; ?></h2>
+                <p><?php echo substr($article['body'], 0, 120); ?></p>
+                <p><a class="btn btn-primary" href="<?php $this->url('home/show/'.$article['id']); ?>" role="button">View details »</a></p>
+            </section>
+            <?php } ?>
+        </section>
+    </section>
 
-</body>
-</html>
+<?php $this->include("app.layouts.footer"); ?>
